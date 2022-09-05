@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.got.trabajopractico.R;
+import com.got.trabajopractico.home.HomeActivity;
 
 public class Login extends AppCompatActivity {
 
@@ -32,7 +33,13 @@ public class Login extends AppCompatActivity {
 
         etRecordarUsuario = findViewById(R.id.etRecordarUsuario);
 
-        getBtnInicio(btnIniciar);
+        btnIniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_sign_in = new Intent(Login.this, HomeActivity.class);
+                startActivity(intent_sign_in);
+            }
+        });
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,16 +50,6 @@ public class Login extends AppCompatActivity {
         });
 
     }
-
-    private static void getBtnInicio(Button btnIniciar) {
-        btnIniciar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i("TODO", "Se apreto el boton iniciar sesion");
-            }
-        });
-    }
-
 }
 
 
