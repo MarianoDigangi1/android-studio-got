@@ -19,12 +19,10 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.HouseViewHol
     private OnItemClickListener onItemClickListener;
 
     public HouseAdapter(List<House> listHouse,OnItemClickListener onItemClickListener) {
-
         this.listHouse = listHouse;
         this.onItemClickListener = onItemClickListener;
     }
 
-    //Retorna una instancia de HouseViewHolder
     @NonNull
     @Override
     public HouseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -57,7 +55,6 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.HouseViewHol
 
 
     public interface OnItemClickListener{
-
         void onItemClickListener(House house);
     }
 }

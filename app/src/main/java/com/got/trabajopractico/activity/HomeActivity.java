@@ -1,4 +1,4 @@
-package com.got.trabajopractico.home;
+package com.got.trabajopractico.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,7 +10,6 @@ import com.got.trabajopractico.adapter.HouseAdapter;
 import com.got.trabajopractico.model.House;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 

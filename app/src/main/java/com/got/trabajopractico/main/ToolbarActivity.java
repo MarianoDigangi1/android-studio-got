@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.got.trabajopractico.R;
+
 public class ToolbarActivity extends AppCompatActivity {
 
     @Override

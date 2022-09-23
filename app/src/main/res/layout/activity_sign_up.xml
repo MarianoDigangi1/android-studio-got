@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".login.SignUpActivity">
+    android:layout_margin="15dp"
+    tools:context=".activity.SignUpActivity">
 
     <TextView
-        android:id="@+id/tvSignUp"
+        android:id="@+id/tvRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registro"
@@ -19,10 +20,81 @@
         android:gravity="center_horizontal"
        />
 
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrese nombre"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:width="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20dp"/>
+
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:layout_margin="3dp"
         />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrese email"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:width="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout_margin="3dp"
+        />
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrese contraseña"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:width="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_margin="3dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="3dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnRegistrarSingUp"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:text="Registar"
+            android:layout_margin="4dp"
+            />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
