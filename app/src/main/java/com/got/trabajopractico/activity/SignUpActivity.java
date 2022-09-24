@@ -14,6 +14,8 @@ import com.got.trabajopractico.db.UsuarioManager;
 import com.got.trabajopractico.model.Usuario;
 
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -46,8 +48,6 @@ public class SignUpActivity extends AppCompatActivity {
                         e.printStackTrace();
                         Toast.makeText(SignUpActivity.this,"ERROR", Toast.LENGTH_LONG).show();
                     }
-                }else{
-                    Toast.makeText(SignUpActivity.this,"ERROR EN UNO DE LOS CAMPOS", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -63,12 +63,20 @@ public class SignUpActivity extends AppCompatActivity {
         editTextPassoword = findViewById(R.id.etPassword);
         btnSignUp = findViewById(R.id.btnRegistrarSingUp);
     }
+
     private boolean verificaciones(Usuario usuario){
-        boolean flag = true;
-        if(usuario.getEmail().matches("[@]+.+com$")){
-            flag = false;
+
+        Pattern pat = Pattern.compile("[@]+.+com");
+        Matcher mat = pat.matcher(usuario.getEmail());
+        if(!mat.find()){
+            Toast.makeText(SignUpActivity.this,"ERROR AL CREAR EL MAIL", Toast.LENGTH_LONG).show();
+            return false;
         }
-        return flag;
+        if(usuario.getPassword().length()>=4){
+            Toast.makeText(SignUpActivity.this,"ERROR AL CREAR LA CONTRASEÑA, CONTRASEÑA MUY CORTA",Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
     }
 }
 

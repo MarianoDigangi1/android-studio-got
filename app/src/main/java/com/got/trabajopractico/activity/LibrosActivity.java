@@ -1,15 +1,14 @@
 package com.got.trabajopractico.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.got.trabajopractico.R;
 import com.got.trabajopractico.adapter.HouseAdapter;
@@ -17,14 +16,14 @@ import com.got.trabajopractico.model.House;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class LibrosActivity  extends AppCompatActivity {
 
     Toolbar my_toolbar;
     RecyclerView rvHouseGot;
     HouseAdapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -39,30 +38,24 @@ public class HomeActivity extends AppCompatActivity {
         rvHouseGot.setAdapter(adapter);
     }
 
-    private ArrayList<House> getHouse(){
-        return new ArrayList<House>() {
-            {
-                add(new House(1, "Casa Stark", "Adrogue"));
-                add(new House(2, "Casa Arryn", "Lomas de zamora"));
-                add(new House(3, "Casa Targaryen", "Merlo"));
-                add(new House(4, "Casa Lannister", "Palermo"));
-            }
-        };
-    }
-
     private void inicializarElementos(){
         my_toolbar = findViewById(R.id.mi_toolbar);
         rvHouseGot = findViewById(R.id.rvHouseGot);
 
         setSupportActionBar(my_toolbar);
-        getSupportActionBar().setTitle("CASAS GOT");
+        getSupportActionBar().setTitle("LIBROS GOT");
     }
 
-    //Esto infla el xml
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_home, menu);
-        return super.onCreateOptionsMenu(menu);
+
+    private ArrayList<House> getHouse(){
+        return new ArrayList<House>() {
+            {
+                add(new House(1, "Naruto", "1"));
+                add(new House(2, "Naruto", "2"));
+                add(new House(3, "Naruto", "3"));
+                add(new House(4, "Naruto SHIPPUDEN", "1"));
+            }
+        };
     }
 
     @Override
@@ -77,11 +70,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void paginacionEntreActivitis(Class claseDestino) {
-        Intent intentGlobal = new Intent(HomeActivity.this, claseDestino);
+        Intent intentGlobal = new Intent(LibrosActivity.this, claseDestino);
         startActivity(intentGlobal);
     }
 }
-
-
-
-

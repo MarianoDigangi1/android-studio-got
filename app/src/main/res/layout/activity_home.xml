@@ -5,18 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="5dp"
     tools:context=".activity.HomeActivity">
 
-
-    <TextView
-        android:id="@+id/txtHouseGot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Casas Got"
-        android:textSize="50dp"
-        android:textStyle="bold"/>
+    <include
+        android:id="@+id/mi_toolbar"
+        layout="@layout/toolbar"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHouseGot"

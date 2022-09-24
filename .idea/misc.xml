@@ -4,13 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.186" />
+        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/drawable/ic_back_24.xml" value="0.2375" />
+        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/drawable/ic_baseline_reorder_24.xml" value="0.2375" />
+        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/drawable/ic_iphone_6_7_8_plus___1.xml" value="0.2375" />
         <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.186" />
+        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/drawable/ic_winter.xml" value="0.157" />
         <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/activity_home.xml" value="0.19293478260869565" />
         <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/activity_home_list.xml" value="0.1778115501519757" />
         <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/activity_login.xml" value="0.223731884057971" />
         <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
-        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/activity_toolbar.xml" value="0.20742753623188406" />
+        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/activity_splash_screen.xml" value="0.23641304347826086" />
+        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/activity_toolbar.xml" value="0.33" />
+        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/layout/toolbar.xml" value="0.23641304347826086" />
+        <entry key="..\:/Users/maria/AndroidStudioProjects/TrabajoPractico2/app/src/main/res/menu/menu_home.xml" value="0.24947916666666667" />
       </map>
     </option>
   </component>
