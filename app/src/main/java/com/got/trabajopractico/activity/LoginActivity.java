@@ -9,9 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.got.trabajopractico.R;
+import com.got.trabajopractico.db.UsuarioManager;
+import com.got.trabajopractico.entity.Usuario;
 import com.got.trabajopractico.helpers.HelperConstants;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -27,21 +32,18 @@ public class LoginActivity extends AppCompatActivity {
 
         inicializarElementos();
         configurarSharedPreferenced();
-        //Funcionalidad de los Buttons
+
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usuario = etUsuario.getText().toString();
-                String password = etContra.getText().toString();
-                recordarUsuario(usuario, password);
+
             }
         });
+
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //si se cumple la condicion de que el <Usuario y contraseña> es igual a Usario y contraseña que entre a paginacion, en caso contrario mostrar un mensaje
                 paginacionEntreActivitis(SignUpActivity.class);
-                // Toast.makeText(SignUpActivity.this,"ERROR AL VALIDAR USUARIO", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -78,5 +80,6 @@ public class LoginActivity extends AppCompatActivity {
     private void paginacionEntreActivitis(Class claseDestino) {
         Intent intentGlobal = new Intent(LoginActivity.this, claseDestino);
         startActivity(intentGlobal);
+        //finish();
     }
 }

@@ -5,7 +5,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.got.trabajopractico.helpers.HelperConstants;
-import com.got.trabajopractico.model.Usuario;
+import com.got.trabajopractico.entity.Usuario;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;

@@ -10,7 +10,7 @@ import com.got.trabajopractico.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private static final long tiempo_espera = 3000;
+    private static final long tiempo_espera = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

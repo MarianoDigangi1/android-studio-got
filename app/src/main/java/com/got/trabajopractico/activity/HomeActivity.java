@@ -17,6 +17,10 @@ import com.got.trabajopractico.model.House;
 
 import java.util.ArrayList;
 
+import okhttp3.HttpUrl;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class HomeActivity extends AppCompatActivity {
 
     Toolbar my_toolbar;
@@ -39,6 +43,14 @@ public class HomeActivity extends AppCompatActivity {
         rvHouseGot.setAdapter(adapter);
     }
 
+  /*  private Retrofit getRetrofit(){
+        Retrofit build = Retrofit.Builder
+                .baseUrl(HttpUrl.parse("https://anapioficeandfire.com/api/houses/"))
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return build;
+    }
+*/
     private ArrayList<House> getHouse(){
         return new ArrayList<House>() {
             {

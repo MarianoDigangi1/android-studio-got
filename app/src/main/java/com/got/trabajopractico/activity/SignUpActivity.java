@@ -11,16 +11,16 @@ import android.widget.Toast;
 
 import com.got.trabajopractico.R;
 import com.got.trabajopractico.db.UsuarioManager;
-import com.got.trabajopractico.model.Usuario;
+import com.got.trabajopractico.entity.Usuario;
 
-import java.sql.SQLException;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
 
     TextView textViewRegistro, textViewNombre, textViewEmail, textViewPassword;
-    EditText editTextNombre, editTextEmail, editTextPassoword;
+    EditText editTextNombre, editTextEmail, editTextPassword;
     Button btnSignUp;
 
     @Override
@@ -33,12 +33,13 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Usuario usuario = new Usuario();
 
                 usuario.setId((int)(Math.random()*900000+1));
                 usuario.setUsername(editTextNombre.getText().toString());
                 usuario.setEmail(editTextEmail.getText().toString());
-                usuario.setPassword(editTextEmail.getText().toString());
+                usuario.setPassword(editTextPassword.getText().toString());
 
                 if(verificaciones(usuario)){
                     try{
@@ -58,24 +59,41 @@ public class SignUpActivity extends AppCompatActivity {
         textViewNombre = findViewById(R.id.tvNombre);
         textViewEmail = findViewById(R.id.tvEmail);
         textViewPassword = findViewById(R.id.tvPassword);
-        editTextNombre = findViewById(R.id.etNombre);
-        editTextEmail = findViewById(R.id.etEmail);
-        editTextPassoword = findViewById(R.id.etPassword);
+        editTextNombre = findViewById(R.id.etSignNombre);
+        editTextEmail = findViewById(R.id.etSignEmail);
+        editTextPassword = findViewById(R.id.etSignPassword);
         btnSignUp = findViewById(R.id.btnRegistrarSingUp);
     }
 
     private boolean verificaciones(Usuario usuario){
 
-        Pattern pat = Pattern.compile("[@]+.+com");
+        Pattern pat = Pattern.compile("[@]+.+com$");
         Matcher mat = pat.matcher(usuario.getEmail());
+
         if(!mat.find()){
-            Toast.makeText(SignUpActivity.this,"ERROR AL CREAR EL MAIL", Toast.LENGTH_LONG).show();
+            Toast.makeText(SignUpActivity.this,"MAIL NO VALIDO", Toast.LENGTH_LONG).show();
             return false;
         }
-        if(usuario.getPassword().length()>=4){
+
+        if(usuario.getPassword().length()<=4){
             Toast.makeText(SignUpActivity.this,"ERROR AL CREAR LA CONTRASEÑA, CONTRASEÑA MUY CORTA",Toast.LENGTH_LONG).show();
             return false;
         }
+
+        try {
+            List<Usuario> usuarios = UsuarioManager.getInstanciaUsuarioManager(SignUpActivity.this).getUsuarios();
+            for (Usuario user : usuarios) {
+                if (user.getUsername().equals(editTextNombre.getText().toString())
+                        || user.getEmail().equals(editTextEmail.getText().toString())) {
+                    Toast.makeText(SignUpActivity.this,"USUARIO YA REGISTRADO",Toast.LENGTH_LONG).show();
+                    return false;
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //SI SE CUMPLE TODAS LAS VALIDACIONES SE DEVOLVERA UN TRUE, QUE DARA ACCESO A GUARDAR USARIO
         return true;
     }
 }

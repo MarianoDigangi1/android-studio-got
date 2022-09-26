@@ -32,7 +32,7 @@
         android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/etNombre"
+        android:id="@+id/etSignNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"
@@ -51,7 +51,7 @@
         android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etSignEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
@@ -70,7 +70,7 @@
         android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etSignPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"

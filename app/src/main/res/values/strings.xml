@@ -3,4 +3,5 @@
     <string name="hola">hola</string>
     <string name="text_personaje">Personajes</string>
     <string name="text_libros">Libros</string>
+    <string name="text_cerrar_sesion">Cerrar Sesión</string>
 </resources>

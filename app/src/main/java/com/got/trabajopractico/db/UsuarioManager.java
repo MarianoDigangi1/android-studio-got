@@ -2,7 +2,7 @@ package com.got.trabajopractico.db;
 
 import android.content.Context;
 
-import com.got.trabajopractico.model.Usuario;
+import com.got.trabajopractico.entity.Usuario;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;

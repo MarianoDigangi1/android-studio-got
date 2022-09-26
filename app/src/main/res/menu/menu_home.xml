@@ -9,4 +9,9 @@
         android:id="@+id/item_libros"
         android:title="@string/text_libros">
     </item>
+    <item
+        android:id="@+id/item_cerrar_sesion"
+        android:title="@string/text_cerrar_sesion">
+    </item>
+
 </menu>

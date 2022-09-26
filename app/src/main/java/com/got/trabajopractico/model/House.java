@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class House implements Serializable {
 
-    long id;
-    String name;
-    String region;
-    String coatOfArms;
+    private long id;
+    private String name;
+    private String region;
+    private String coatOfArms;
 
     public House(long id, String name, String region) {
         this.id = id;
