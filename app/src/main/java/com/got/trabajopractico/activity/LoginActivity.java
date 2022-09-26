@@ -36,29 +36,30 @@ public class LoginActivity extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usuario = etUsuario.getText().toString();
-                String password = etContra.getText().toString();
-                recordarUsuario(usuario, password);
+                String usuarioEditText = etUsuario.getText().toString();
+                String passwordEditText = etContra.getText().toString();
+                boolean flagForPagination = false;
+
+                try{
+                    List<Usuario> usuarios = UsuarioManager.getInstanciaUsuarioManager(LoginActivity.this).getUsuarios();
+                    for (Usuario user : usuarios) {
+                        if(user.getUsername().equals(usuarioEditText) && user.getPassword().equals(passwordEditText)) flagForPagination = true;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                if(flagForPagination) {
+                    paginacionEntreActivitis(HomeActivity.class);
+                    recordarUsuario(usuarioEditText, passwordEditText);
+                }
+                else Toast.makeText(LoginActivity.this,"ERROR EL USUARIO NO EXISTE", Toast.LENGTH_LONG).show();
             }
         });
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usuario = etUsuario.getText().toString();
-                String password = etContra.getText().toString();
-                //si se cumple la condicion de que el <Usuario y contraseña> es igual a Usario y contraseña que entre a paginacion, en caso contrario mostrar un mensaje
-                try{
-                    List<Usuario> usuarios = UsuarioManager.getInstanciaUsuarioManager(LoginActivity.this).getUsuarios();
-                    for (Usuario user : usuarios) {
-                        if(user.getUsername() != usuario && user.getPassword() != password){
-                            paginacionEntreActivitis(SignUpActivity.class);
-                        } else Toast.makeText(LoginActivity.this,"ERROR EL USUARIO YA EXISTE", Toast.LENGTH_LONG).show();
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                // Toast.makeText(SignUpActivity.this,"ERROR AL VALIDAR USUARIO", Toast.LENGTH_LONG).show();
+                paginacionEntreActivitis(SignUpActivity.class);
             }
         });
     }
@@ -97,20 +98,4 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intentGlobal);
     }
 
-    /*
-    String usuario = etUsuario.getText().toString();
-                String password = etContra.getText().toString();
-                //si se cumple la condicion de que el <Usuario y contraseña> es igual a Usario y contraseña que entre a paginacion, en caso contrario mostrar un mensaje
-                try{
-                    List<Usuario> usuarios = UsuarioManager.getInstanciaUsuarioManager(LoginActivity.this).getUsuarios();
-                    for (Usuario user : usuarios) {
-                        if(user.getUsername() == usuario && user.getPassword() == password){
-                            paginacionEntreActivitis(SignUpActivity.class);
-                        } else Toast.makeText(LoginActivity.this,"ERROR EL USUARIO NO EXISTE", Toast.LENGTH_LONG).show();
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-     */
 }
