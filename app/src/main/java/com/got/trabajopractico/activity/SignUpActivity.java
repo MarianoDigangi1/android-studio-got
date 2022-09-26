@@ -59,9 +59,6 @@ public class SignUpActivity extends AppCompatActivity {
         textViewNombre = findViewById(R.id.tvNombre);
         textViewEmail = findViewById(R.id.tvEmail);
         textViewPassword = findViewById(R.id.tvPassword);
-        editTextNombre = findViewById(R.id.etSignNombre);
-        editTextEmail = findViewById(R.id.etSignEmail);
-        editTextPassword = findViewById(R.id.etSignPassword);
         btnSignUp = findViewById(R.id.btnRegistrarSingUp);
     }
 

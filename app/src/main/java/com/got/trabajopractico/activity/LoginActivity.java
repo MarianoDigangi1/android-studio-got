@@ -13,10 +13,8 @@ import android.widget.Toast;
 
 import com.got.trabajopractico.R;
 import com.got.trabajopractico.db.UsuarioManager;
-import com.got.trabajopractico.entity.Usuario;
 import com.got.trabajopractico.helpers.HelperConstants;
 
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -36,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
             }
         });
 
@@ -82,4 +79,5 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intentGlobal);
         //finish();
     }
+
 }

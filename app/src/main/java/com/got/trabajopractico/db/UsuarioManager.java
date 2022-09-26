@@ -1,6 +1,7 @@
 package com.got.trabajopractico.db;
 
 import android.content.Context;
+import android.view.View;
 
 import com.got.trabajopractico.entity.Usuario;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
