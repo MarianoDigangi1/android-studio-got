@@ -1,7 +1,5 @@
 package com.got.trabajopractico.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,9 +9,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.got.trabajopractico.R;
 import com.got.trabajopractico.db.UsuarioManager;
+import com.got.trabajopractico.entity.Usuario;
 import com.got.trabajopractico.helpers.HelperConstants;
+
+import java.util.List;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -34,6 +37,24 @@ public class LoginActivity extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String usuarioEditText = etUsuario.getText().toString();
+                String passwordEditText = etContra.getText().toString();
+                boolean flagForPagination = false;
+
+                try{
+                    List<Usuario> usuarios = UsuarioManager.getInstanciaUsuarioManager(LoginActivity.this).getUsuarios();
+                    for (Usuario user : usuarios) {
+                        if(user.getUsername().equals(usuarioEditText) && user.getPassword().equals(passwordEditText)) flagForPagination = true;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                if(flagForPagination) {
+                    paginacionEntreActivitis(HomeActivity.class);
+                    recordarUsuario(usuarioEditText, passwordEditText);
+                }
+                else Toast.makeText(LoginActivity.this,"ERROR EL USUARIO NO EXISTE", Toast.LENGTH_LONG).show();
             }
         });
 

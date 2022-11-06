@@ -1,13 +1,13 @@
 package com.got.trabajopractico.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.got.trabajopractico.R;
 import com.got.trabajopractico.db.UsuarioManager;
@@ -59,6 +59,9 @@ public class SignUpActivity extends AppCompatActivity {
         textViewNombre = findViewById(R.id.tvNombre);
         textViewEmail = findViewById(R.id.tvEmail);
         textViewPassword = findViewById(R.id.tvPassword);
+        editTextNombre = findViewById(R.id.etSignNombre);
+        editTextEmail = findViewById(R.id.etSignEmail);
+        editTextPassword = findViewById(R.id.etSignPassword);
         btnSignUp = findViewById(R.id.btnRegistrarSingUp);
     }
 
@@ -94,4 +97,3 @@ public class SignUpActivity extends AppCompatActivity {
         return true;
     }
 }
-
