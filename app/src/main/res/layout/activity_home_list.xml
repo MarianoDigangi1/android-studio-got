@@ -12,21 +12,23 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        >
+        android:padding="15dp">
+
             <TextView
-                android:id="@+id/txtNameHouse"
+                android:id="@+id/txtFirts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:padding="4dp"/>
+
             <TextView
-                android:id="@+id/txtRegion"
+                android:id="@+id/txtSecond"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:padding="4dp"/>
-        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

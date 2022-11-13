@@ -2,12 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item_personajes"
-        android:title="@string/text_personaje">
+        android:id="@+id/item_casas"
+        android:title="@string/text_casas">
     </item>
     <item
         android:id="@+id/item_libros"
         android:title="@string/text_libros">
+    </item>
+    <item
+        android:id="@+id/item_personajes"
+        android:title="@string/text_personaje">
     </item>
     <item
         android:id="@+id/item_cerrar_sesion"

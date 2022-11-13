@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="5dp"
-    tools:context=".activity.HomeActivity">
+    tools:context=".activity.PersonajesActivity">
 
     <include
         android:id="@+id/mi_toolbar"
@@ -27,6 +27,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
-
 
 </LinearLayout>
