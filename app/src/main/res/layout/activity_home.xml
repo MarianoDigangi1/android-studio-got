@@ -13,14 +13,6 @@
         layout="@layout/toolbar"
         />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="10"
-        tools:listitem="@layout/activity_home_list" />
-
     <Button
         android:id="@+id/btnNotificacion"
         android:text="Habilitar notificacion"
@@ -28,5 +20,12 @@
         android:layout_height="wrap_content"
         />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="10"
+        tools:listitem="@layout/activity_home_list" />
 
 </LinearLayout>
